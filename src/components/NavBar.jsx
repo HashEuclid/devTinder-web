@@ -6,6 +6,7 @@ import { removeUser } from "../utils/userSlice";
 
 const NavBar = () => {
   const user = useSelector((store) => store.user);
+  console.log("Navbar =",user)
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -29,7 +30,7 @@ const NavBar = () => {
       </div>
       {user && (
         <div className="flex-none gap-2 flex items-center">
-          <div className="form-control"> Welcome, {user.firstName}</div>
+          <div className="form-control"> Welcome, {user?.firstName || user?.data?.firstName}</div>
 
           <div className="dropdown dropdown-end mx-5">
             <div
@@ -38,7 +39,7 @@ const NavBar = () => {
               className="btn btn-ghost btn-circle avatar"
             >
               <div className="w-10 rounded-full">
-                <img alt="User photo" src={user.photoUrl} />
+                <img alt="User photo" src={user?.photoUrl || user?.data?.photoUrl} />
               </div>
             </div>
             <ul
