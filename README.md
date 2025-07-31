@@ -30,11 +30,12 @@
 - New Page - See all my Conection Requests
 - Feature - Accept/Reject connection request
 - Profile Page
-- 
-Remaining :
 - Send/ignore the user card from Feed
 - Signup New User
 - E2E Testing
+
+
+
 
 
 ## Component design

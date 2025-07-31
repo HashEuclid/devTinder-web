@@ -10,9 +10,9 @@ const EditProfile = ({ user }) => {
   const [firstName, setFirstName] = useState(user.firstName);
   const [lastName, setLastName] = useState(user.lastName);
   const [photoUrl, setPhotoUrl] = useState(user.photoUrl);
-  const [age, setAge] = useState(user.age);
-  const [gender, setGender] = useState(user.gender);
-  const [about, setAbout] = useState(user.about);
+  const [age, setAge] = useState(user.age || "");
+  const [gender, setGender] = useState(user.gender || "");
+  const [about, setAbout] = useState(user.about || "");
 
   const [error, setError] = useState("");
   const dispatch = useDispatch();
@@ -31,9 +31,8 @@ const EditProfile = ({ user }) => {
       dispatch(addUser(res?.data?.data));
       setShowToast(true);
       setTimeout(() => {
-        setShowToast(false)
-      },3000);
-
+        setShowToast(false);
+      }, 3000);
     } catch (err) {
       setError(err.response.data);
     }
@@ -127,11 +126,13 @@ const EditProfile = ({ user }) => {
           user={{ firstName, lastName, photoUrl, age, gender, about }}
         />
       </div>
-{showToast && <div className="toast toast-top toast-center">
-  <div className="alert alert-success">
-    <span>Profile saved successfully.</span>
-  </div>
-</div>}
+      {showToast && (
+        <div className="toast toast-top toast-center">
+          <div className="alert alert-success">
+            <span>Profile saved successfully.</span>
+          </div>
+        </div>
+      )}
     </>
   );
 };
