@@ -104,3 +104,27 @@
         proxy_set_header Host $host;
         proxy_cache_bypass $http_upgrade;
     }
+# Adding a Custom Domain Name
+- Purchase a Domain name from godaddy
+- Signup on cloudflare & Add a new Domain name
+- Change the Nameservers on godaddy and point it to cloudflare
+- Wait for sometime till your Nameservers are updated - nearly 15 mins
+- in DNS Record => create an A devTinder.in record which will point to the AWS machine IP Address.
+- Enable SSL Certificate => SSL tab -> configure -> select custom -> flexible -> save
+- Go to Edge Certificates => Automatic HTTPS Rewrites -> enable
+
+
+# Sending Emails via SES
+- Create an IAM user
+- Give access to AmazonSESFullAccess
+- Amazon SES: Create an Identity
+- Verify your domain name
+- Verify the Email address identity
+- Install AWS SDK and make sure you are on V3
+- code example on github awsdocs/aws-doc-sdk-example/
+- Setup SesClient
+- ACcess Credentials should be created in IAM account <secretkey and accessKey> uder security credentials tab and add the credentials to the .env file
+- Write code for SESClient
+- Write code for sending Email address
+- Make the email dynamic by passing more params to the run function
+- 
