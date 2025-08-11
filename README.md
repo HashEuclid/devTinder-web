@@ -51,11 +51,12 @@
 - Signup on AWS
 - Launch instance 
 - chmod 400 <secret>.pem
-- Connected to the machine using SSH command => ssh -i "devTinder-secret.pem" ubuntu@ec2-13-235-82-228.ap-south-1.  compute.amazonaws.com
+- Connected to the machine using SSH command => ssh -i "devTinder-secret.pem" ubuntu@ec2-13-235-82-228.ap-south-1. compute.amazonaws.com
 - Install node version 22.17.0 (same as the node version using on local system)
 - Git clone both frontEnd and backend projects
 
     ## Deploy FrondEnd
+    - git pull ---> for taking latest code
     - npm install => install the dependencies
     - npm run build
     - suod apt update => update the linux system
@@ -127,4 +128,15 @@
 - Write code for SESClient
 - Write code for sending Email address
 - Make the email dynamic by passing more params to the run function
-- 
+
+# Sceduling CRON jobs in Node.js
+- Install node-cron package
+- Learning about cron expressions syntax -- crontab.guru
+- Schedule a job
+- date-fns -- npm package for date management
+- Find all the unique emailids who have got the connection requests in previous day
+- Send Email
+- Explore queue mechanism to send bulk emails
+- Amzon SES bulk emails
+- Create a custom template to make sendEmail function dynamic
+- bee-queue and bull npm packages -- packages to handle queue mechanism -- read on website
