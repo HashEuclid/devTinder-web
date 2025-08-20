@@ -129,7 +129,7 @@
 - Write code for sending Email address
 - Make the email dynamic by passing more params to the run function
 
-# Sceduling CRON jobs in Node.js
+# Scheduling CRON jobs in Node.js
 - Install node-cron package
 - Learning about cron expressions syntax -- crontab.guru
 - Schedule a job
@@ -140,3 +140,22 @@
 - Amzon SES bulk emails
 - Create a custom template to make sendEmail function dynamic
 - bee-queue and bull npm packages -- packages to handle queue mechanism -- read on website
+
+# Razorpay payment gatway integration
+
+- ref - https://github.com/razorpay/razorpay-node/tree/master/documents
+- ref - https://razorpay.com/docs/payments/server-integration/nodejs/integration-steps/#integrate-with-razorpay-payment-gateway
+- ref - https://razorpay.com/docs/webhooks/validate-test/
+- ref - https://razorpay.com/docs/webhooks/payloads/payments/
+- Signup on Razorpay and compllete KYC -- it will take atleast 3-5 days for activation
+- Created UI for premium page
+- Created an API for createorder in backend
+- Added key and secret in .env file
+- Initialized Razorpay in utils
+- Create order on Razorpay
+- Create a Schema and model
+- Saved the order in payments collection in DB
+- Make the API dynamic 
+- Setup Razorpay webhook on your live API
+- 
+
